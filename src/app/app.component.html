@@ -1,3 +1,4 @@
-<h1>
-  {{title}}
-</h1>
+<main>
+  <app-chat-board [msg]="fatherMessage" [user]="fatherUser"></app-chat-board>
+  <app-text-editor (incrementOne)="sendMessage($event)"></app-text-editor>
+</main>

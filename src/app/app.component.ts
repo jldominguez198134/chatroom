@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TextEditorComponent } from './text-editor/text-editor.component';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+  fatherMessage: string;
+  fatherUser: string;
+
+
+  constructor() {
+    this.fatherMessage = '';
+    this.fatherUser = '';
+  }
+
+  sendMessage(ev) {
+    this.fatherMessage = ev.message;
+    this.fatherUser = ev.user;
+  }
+
 }
