@@ -1,6 +1,6 @@
-<p>
-  {{user}}
-</p>
-<h1>
-  {{msg}}
-</h1>
+<div class="chat-board">
+  <div class="message" *ngFor="let messg of arr; let i = index" [ngClass]="{'message-left': i % 2 == 0}">
+    <p  *ngIf="messg.user == currentUser" class="yo">{{messg.user}}</p>
+    <h1>{{messg.message}}</h1>
+  </div>
+</div>

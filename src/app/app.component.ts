@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TextEditorComponent } from './text-editor/text-editor.component';
+import { UsersService } from "./users.service";
 
 @Component({
   selector: 'app-root',
@@ -9,16 +9,26 @@ import { TextEditorComponent } from './text-editor/text-editor.component';
 export class AppComponent {
   fatherMessage: string;
   fatherUser: string;
+  arrayMessage: Array<Object>;
+  arrayUsers: Array<Object>;
 
 
-  constructor() {
+  constructor(private usersService: UsersService) {
     this.fatherMessage = '';
     this.fatherUser = '';
+    this.arrayMessage = [];
+    usersService.getUsers()
+      .subscribe(users => {
+        this.arrayUsers = users['results'];
+        console.log(this.arrayUsers, users);
+      });
   }
+
 
   sendMessage(ev) {
     this.fatherMessage = ev.message;
     this.fatherUser = ev.user;
+    this.arrayMessage.push(ev);
   }
 
 }

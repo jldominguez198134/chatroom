@@ -9,9 +9,11 @@ export class ChatBoardComponent implements OnInit {
 
   @Input() msg: string;
   @Input() user: string;
+  @Input() arr: Array<Object>;
+  currentUser: string;
 
   constructor() {
-    this.msg = '';
+    this.currentUser = 'Jose';
   }
 
   ngOnInit() {

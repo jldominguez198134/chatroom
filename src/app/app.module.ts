@@ -6,19 +6,22 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { TextEditorComponent } from './text-editor/text-editor.component';
 import { ChatBoardComponent } from './chat-board/chat-board.component';
+import { UsersService } from './users.service';
+import { ActiveUsersComponent } from './active-users/active-users.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TextEditorComponent,
-    ChatBoardComponent
+    ChatBoardComponent,
+    ActiveUsersComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [UsersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

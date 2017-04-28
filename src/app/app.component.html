@@ -1,4 +1,7 @@
 <main>
-  <app-chat-board [msg]="fatherMessage" [user]="fatherUser"></app-chat-board>
+  <app-chat-board [arr]="arrayMessage"></app-chat-board>
   <app-text-editor (incrementOne)="sendMessage($event)"></app-text-editor>
+  <div>
+    <app-active-users [arrayUsers]="arrayUsers"></app-active-users>
+  </div>
 </main>
