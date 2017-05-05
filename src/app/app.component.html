@@ -1,7 +1,9 @@
-<main>
-  <app-chat-board [arr]="arrayMessage"></app-chat-board>
-  <app-text-editor (incrementOne)="sendMessage($event)"></app-text-editor>
-  <div>
-    <app-active-users [arrayUsers]="arrayUsers"></app-active-users>
-  </div>
-</main>
+<!--<app-chat-board [arr]="arrayMessage"></app-chat-board>
+<app-text-editor (incrementOne)="sendMessage($event)"></app-text-editor>
+<div>
+  <app-active-users [arrayUsers]="arrayUsers"></app-active-users>
+</div>-->
+<header><h1>Chat App</h1></header>
+<a routerLink="/" routerLinkActive="chat">Chat</a>
+<a routerLink="/users" routerLinkActive="users">Usuarios</a>
+<router-outlet></router-outlet>

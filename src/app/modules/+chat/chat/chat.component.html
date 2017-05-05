@@ -1,0 +1,6 @@
+<div class="mensajes">
+  <app-chat-board [arr]="arrayMessage"></app-chat-board>
+</div>
+<div>
+  <app-text-editor (incrementOne)="sendMessage($event)"></app-text-editor>
+</div>
